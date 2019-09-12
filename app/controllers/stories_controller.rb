@@ -14,9 +14,15 @@ class StoriesController < ApplicationController
     end
 
     def update
+        @story = Story.find(params[:id])
+        @story.update_attributes(story_params)
+        render json: @story
     end
   
     def destroy
+        @story = Story.find(params[:id])
+        @story.destroy
+        render json: @story
     end
   
     private

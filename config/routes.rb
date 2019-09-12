@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :stories
   resources :comments
   resources :users
+  patch '/stories/:id', to: 'stories#update'
+  post '/stories', to: 'stories#create'
 
 end
